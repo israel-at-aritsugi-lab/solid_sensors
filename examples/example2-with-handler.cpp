@@ -34,17 +34,17 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("Distance value: " + String(metaDistanceSensor.fetchData()));
-  Serial.println("Rain value: " + String(metaRainSensor.fetchData()));
-  Serial.println("DHT Humidity value: " + String(metaAmbientHumiditySensor.fetchData()));
-  Serial.println("DHT Temperature value: " + String(ambientTemperatureSensor.fetchData()));
-  Serial.println("Sht20 Humidity value: " + String(ambientHumiditySht20Sensor.fetchData()));
-  Serial.println("Sht20 Temperature value: " + String(ambientTemperatureSht20Sensor.fetchData()));
-  Serial.println("MPSPh value: " + String(metaMPSPhSensor.fetchData()));
-  Serial.println("MPSEc value: " + String(metaMPSEcSensor.fetchData()));
-  Serial.println("Nitro value: " + String(metaMPSNitroSensor.fetchData()));
-  Serial.println("MPSPhosphorous value: " + String(metaMPSPhosphoSensor.fetchData()));
-  Serial.println("MPSPotassium value: " + String(metaMPSPotaSensor.fetchData()));
+  SHandler.routine(metaDistanceSensor);
+  SHandler.routine(metaRainSensor);
+  SHandler.routine(metaAmbientHumiditySensor);
+  SHandler.routine(ambientTemperatureSensor);
+  SHandler.routine(ambientHumiditySht20Sensor);
+  SHandler.routine(ambientTemperatureSht20Sensor);
+  SHandler.routine(metaMPSPhSensor);
+  SHandler.routine(metaMPSEcSensor);
+  SHandler.routine(metaMPSNitroSensor);
+  SHandler.routine(metaMPSPhosphoSensor);
+  SHandler.routine(metaMPSPotaSensor);
   
   delay(500);
 }

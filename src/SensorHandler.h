@@ -10,11 +10,6 @@ class SensorHandler {
         DTransformer = RegressiveDataTransformer();
     }
 
-    // float transformData(AbstractSensor &AbSensor){
-    //     if(isnan(AbSensor.stateData)) return 0;
-    //     return (AbSensor.stateData * AbSensor.mValue) + AbSensor.cValue;
-    // }
-
     void setSleepingMode(AbstractSensor &AbSensor, bool sleepingValue){
         AbSensor.cycleCount = 0;
         AbSensor.sleeping = sleepingValue;
@@ -40,13 +35,18 @@ class SensorHandler {
         }
     }
 
-    void routine(AbstractSensor &AbSensor){
-        Serial.print(".");
+    void routine(AbstractSensor &AbSensor, String label = "sensor"){
+        
         AbSensor.cycleCount++;
         if(AbSensor.sleeping){
             delay(1);
             if (AbSensor.cycleCount >= AbSensor.sleepCount) setSleepingMode(AbSensor, false);
-        } else processData(DTransformer, AbSensor);
+        } else {
+            processData(DTransformer, AbSensor);
+
+            // use sensor and data here
+            Serial.println(label + " value: " + String(AbSensor.fetchData()));
+        }
     }
 };
 
