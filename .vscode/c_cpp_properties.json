@@ -1,0 +1,66 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "/Users/elikem/workspace/solid_sensors/include",
+                "/Users/elikem/workspace/solid_sensors/src",
+                "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/DFRobot_SHT20",
+                "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/AltSoftSerial",
+                "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/SensorModbusMaster/src",
+                "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/DHT sensor library",
+                "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/Adafruit Unified Sensor",
+                "/Users/elikem/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "/Users/elikem/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/Users/elikem/workspace/solid_sensors/include",
+                    "/Users/elikem/workspace/solid_sensors/src",
+                    "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/DFRobot_SHT20",
+                    "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/AltSoftSerial",
+                    "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/SensorModbusMaster/src",
+                    "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/DHT sensor library",
+                    "/Users/elikem/workspace/solid_sensors/.pio/libdeps/nanoatmega328new/Adafruit Unified Sensor",
+                    "/Users/elikem/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "/Users/elikem/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                    "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "/Users/elikem/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60104",
+                "ARDUINO_AVR_NANO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "/Users/elikem/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}

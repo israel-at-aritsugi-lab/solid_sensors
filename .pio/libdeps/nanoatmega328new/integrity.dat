@@ -1,0 +1,5 @@
+adafruit/Adafruit Unified Sensor@^1.1.5
+paulstoffregen/AltSoftSerial@^1.4
+dfrobot/DFRobot_SHT20@^1.0.0
+envirodiy/SensorModbusMaster@^0.6.8
+adafruit/DHT sensor library@^1.4.3
