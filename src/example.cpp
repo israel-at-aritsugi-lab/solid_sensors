@@ -3,8 +3,8 @@
 #include "SensorHandler.h"
 #include "DistanceSensor.h"
 #include "RainSensor.h"
-#include "AmbientHumiditySensor.h"
-#include "AmbientTemperatureSensor.h"
+#include "DHTAmbientHumiditySensor.h"
+#include "DHTAmbientTemperatureSensor.h"
 #include "Sht20AmbientHumiditySensor.h"
 #include "Sht20AmbientTemperatureSensor.h"
 #include "MPSSoilPhSensor.h"
@@ -19,8 +19,8 @@ SensorHandler SHandler;
 
 DistanceSensor metaDistanceSensor;
 RainSensor metaRainSensor;
-AmbientHumiditySensor metaAmbientHumiditySensor;
-AmbientTemperatureSensor ambientTemperatureSensor;
+DHTAmbientHumiditySensor metaAmbientHumidityDHTSensor;
+DHTAmbientTemperatureSensor ambientTemperatureDHTSensor;
 Sht20AmbientHumiditySensor ambientHumiditySht20Sensor;
 Sht20AmbientTemperatureSensor ambientTemperatureSht20Sensor;
 MPSSoilEcSensor metaMPSEcSensor;
@@ -34,17 +34,17 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("Distance value: " + String(metaDistanceSensor.fetchData()));
-  Serial.println("Rain value: " + String(metaRainSensor.fetchData()));
-  Serial.println("DHT Humidity value: " + String(metaAmbientHumiditySensor.fetchData()));
-  Serial.println("DHT Temperature value: " + String(ambientTemperatureSensor.fetchData()));
-  Serial.println("Sht20 Humidity value: " + String(ambientHumiditySht20Sensor.fetchData()));
-  Serial.println("Sht20 Temperature value: " + String(ambientTemperatureSht20Sensor.fetchData()));
-  Serial.println("MPSPh value: " + String(metaMPSPhSensor.fetchData()));
-  Serial.println("MPSEc value: " + String(metaMPSEcSensor.fetchData()));
-  Serial.println("Nitro value: " + String(metaMPSNitroSensor.fetchData()));
-  Serial.println("MPSPhosphorous value: " + String(metaMPSPhosphoSensor.fetchData()));
-  Serial.println("MPSPotassium value: " + String(metaMPSPotaSensor.fetchData()));
+  SHandler.routine(metaDistanceSensor, "Distance");
+  SHandler.routine(metaRainSensor, "Rain");
+  SHandler.routine(metaAmbientHumidityDHTSensor, "Humidity");
+  SHandler.routine(ambientTemperatureDHTSensor, "Temperature");
+  SHandler.routine(ambientHumiditySht20Sensor, "HumiditySht20");
+  SHandler.routine(ambientTemperatureSht20Sensor, "TemperatureSht20");
+  SHandler.routine(metaMPSPhSensor, "MPSPh");
+  SHandler.routine(metaMPSEcSensor, "MPSEc");
+  SHandler.routine(metaMPSNitroSensor, "MPSNitro");
+  SHandler.routine(metaMPSPhosphoSensor, "MPSPhospho");
+  SHandler.routine(metaMPSPotaSensor, "MPSPota");
   
   delay(500);
 }

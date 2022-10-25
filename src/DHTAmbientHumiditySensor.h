@@ -3,15 +3,15 @@
 #define DHTPIN 4
 #define DHTTYPE DHT11
 
-DHT dhtTemp(DHTPIN, DHTTYPE);
+DHT dhtHumid(DHTPIN, DHTTYPE);
 
-class AmbientTemperatureSensor: public AbstractSensor {  
+class DHTAmbientHumiditySensor: public AbstractSensor {  
     public: 
-        AmbientTemperatureSensor(
+        DHTAmbientHumiditySensor(
             word sensorSleepCount=1000, 
             byte sensorReadCount=10, 
             byte sensorMValue=10, 
-            byte sensorCValue=200, 
+            byte sensorCValue=0, 
             word sensorMinValue=0, 
             word sensorMaxValue=1000
         ): AbstractSensor(
@@ -22,11 +22,11 @@ class AmbientTemperatureSensor: public AbstractSensor {
             sensorMinValue, 
             sensorMaxValue
         ){
-            dhtTemp.begin();
+            dhtHumid.begin();
         }
 
         float fetchData() {
-            return dhtTemp.readTemperature();
+            return dhtHumid.readHumidity();
         }
 };
 

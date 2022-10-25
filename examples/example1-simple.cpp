@@ -3,8 +3,8 @@
 #include "SensorHandler.h"
 #include "DistanceSensor.h"
 #include "RainSensor.h"
-#include "AmbientHumiditySensor.h"
-#include "AmbientTemperatureSensor.h"
+#include "DHTAmbientHumiditySensor.h"
+#include "DHTAmbientTemperatureSensor.h"
 #include "Sht20AmbientHumiditySensor.h"
 #include "Sht20AmbientTemperatureSensor.h"
 #include "MPSSoilPhSensor.h"
@@ -19,8 +19,8 @@ SensorHandler SHandler;
 
 DistanceSensor metaDistanceSensor;
 RainSensor metaRainSensor;
-AmbientHumiditySensor metaAmbientHumiditySensor;
-AmbientTemperatureSensor ambientTemperatureSensor;
+DHTAmbientHumiditySensor metaAmbientHumiditySensor;
+DHTAmbientTemperatureSensor ambientTemperatureSensor;
 Sht20AmbientHumiditySensor ambientHumiditySht20Sensor;
 Sht20AmbientTemperatureSensor ambientTemperatureSht20Sensor;
 MPSSoilEcSensor metaMPSEcSensor;
