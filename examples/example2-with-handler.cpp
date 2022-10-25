@@ -7,6 +7,8 @@
 #include "DHTAmbientTemperatureSensor.h"
 #include "Sht20AmbientHumiditySensor.h"
 #include "Sht20AmbientTemperatureSensor.h"
+#include "MPSSoilTemperatureSensor.h"
+#include "MPSSoilHumiditySensor.h"
 #include "MPSSoilPhSensor.h"
 #include "MPSSoilEcSensor.h"
 #include "MPSSoilNitrogenSensor.h"
@@ -23,6 +25,8 @@ DHTAmbientHumiditySensor metaAmbientHumidityDHTSensor;
 DHTAmbientTemperatureSensor ambientTemperatureDHTSensor;
 Sht20AmbientHumiditySensor ambientHumiditySht20Sensor;
 Sht20AmbientTemperatureSensor ambientTemperatureSht20Sensor;
+MPSSoilTemperatureSensor metaMPSTemperatureSensor;
+MPSSoilHumiditySensor metaMPSHumiditySensor;
 MPSSoilEcSensor metaMPSEcSensor;
 MPSSoilPhSensor metaMPSPhSensor;
 MPSSoilNitrogenSensor metaMPSNitroSensor;
@@ -40,6 +44,8 @@ void loop() {
   SHandler.routine(ambientTemperatureDHTSensor, "Temperature");
   SHandler.routine(ambientHumiditySht20Sensor, "HumiditySht20");
   SHandler.routine(ambientTemperatureSht20Sensor, "TemperatureSht20");
+  SHandler.routine(metaMPSTemperatureSensor, "MPSTemperature");
+  SHandler.routine(metaMPSHumiditySensor, "MPSHumidity");
   SHandler.routine(metaMPSPhSensor, "MPSPh");
   SHandler.routine(metaMPSEcSensor, "MPSEc");
   SHandler.routine(metaMPSNitroSensor, "MPSNitro");
