@@ -34,17 +34,17 @@ void setup() {
 }
 
 void loop() {
-  SHandler.routine(metaDistanceSensor);
-  SHandler.routine(metaRainSensor);
-  SHandler.routine(metaAmbientHumiditySensor);
-  SHandler.routine(ambientTemperatureSensor);
-  SHandler.routine(ambientHumiditySht20Sensor);
-  SHandler.routine(ambientTemperatureSht20Sensor);
-  SHandler.routine(metaMPSPhSensor);
-  SHandler.routine(metaMPSEcSensor);
-  SHandler.routine(metaMPSNitroSensor);
-  SHandler.routine(metaMPSPhosphoSensor);
-  SHandler.routine(metaMPSPotaSensor);
+  SHandler.routine(metaDistanceSensor, "Distance");
+  SHandler.routine(metaRainSensor, "Rain");
+  SHandler.routine(metaAmbientHumiditySensor, "Humidity");
+  SHandler.routine(ambientTemperatureSensor, "Temperature");
+  SHandler.routine(ambientHumiditySht20Sensor, "HumiditySht20");
+  SHandler.routine(ambientTemperatureSht20Sensor, "TemperatureSht20");
+  SHandler.routine(metaMPSPhSensor, "MPSPh");
+  SHandler.routine(metaMPSEcSensor, "MPSEc");
+  SHandler.routine(metaMPSNitroSensor, "MPSNitro");
+  SHandler.routine(metaMPSPhosphoSensor, "MPSPhospho");
+  SHandler.routine(metaMPSPotaSensor, "MPSPota");
   
   delay(500);
 }
