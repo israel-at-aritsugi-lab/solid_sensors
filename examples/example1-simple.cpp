@@ -7,6 +7,8 @@
 #include "DHTAmbientTemperatureSensor.h"
 #include "Sht20AmbientHumiditySensor.h"
 #include "Sht20AmbientTemperatureSensor.h"
+#include "MPSSoilTemperatureSensor.h"
+#include "MPSSoilHumiditySensor.h"
 #include "MPSSoilPhSensor.h"
 #include "MPSSoilEcSensor.h"
 #include "MPSSoilNitrogenSensor.h"
@@ -23,6 +25,8 @@ DHTAmbientHumiditySensor metaAmbientHumiditySensor;
 DHTAmbientTemperatureSensor ambientTemperatureSensor;
 Sht20AmbientHumiditySensor ambientHumiditySht20Sensor;
 Sht20AmbientTemperatureSensor ambientTemperatureSht20Sensor;
+MPSSoilTemperatureSensor metaMPSTemperatureSensor;
+MPSSoilHumiditySensor metaMPSHumiditySensor;
 MPSSoilEcSensor metaMPSEcSensor;
 MPSSoilPhSensor metaMPSPhSensor;
 MPSSoilNitrogenSensor metaMPSNitroSensor;
@@ -40,6 +44,8 @@ void loop() {
   Serial.println("DHT Temperature value: " + String(ambientTemperatureSensor.fetchData()));
   Serial.println("Sht20 Humidity value: " + String(ambientHumiditySht20Sensor.fetchData()));
   Serial.println("Sht20 Temperature value: " + String(ambientTemperatureSht20Sensor.fetchData()));
+  Serial.println("MPS Temperature value: " + String(metaMPSTemperatureSensor.fetchData()));
+  Serial.println("MPS Humidity value: " + String(metaMPSHumiditySensor.fetchData()));
   Serial.println("MPSPh value: " + String(metaMPSPhSensor.fetchData()));
   Serial.println("MPSEc value: " + String(metaMPSEcSensor.fetchData()));
   Serial.println("Nitro value: " + String(metaMPSNitroSensor.fetchData()));
