@@ -11,7 +11,7 @@ class MPSSoilPotassiumSensor: public AbstractSensor {
     int val1, val2, val3, val4, val5, val6,val7;
 
     MPSSoilPotassiumSensor(
-      word sensorSleepCount=1000, 
+      word sensorSleepCount=100, 
       byte sensorReadCount=10, 
       byte sensorMValue=10, 
       byte sensorCValue=0, 

@@ -7,7 +7,7 @@ DFRobot_SHT20 sht20Humid;
 class Sht20AmbientHumiditySensor: public AbstractSensor {  
     public: 
         Sht20AmbientHumiditySensor(
-            word sensorSleepCount=1000, 
+            word sensorSleepCount=100, 
             byte sensorReadCount=10, 
             byte sensorMValue=10, 
             byte sensorCValue=0, 

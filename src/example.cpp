@@ -1,3 +1,15 @@
+/*!
+ * @file  example2-with-handler.cpp
+ * @brief  Using Solid Sensors (SS) with Hander class to routinely fetch and display sensor values.
+ * @details  This example a Handler instance to manage the sleep and read cycles of the sensors for periodic sensor values.
+ * @n  The use of the Handler makes it easy to manage different sleep and read cycles for each sensor.
+ * @copyright  Copyright (c) 2022 Kumamoto University (https://www.kumamoto-u.ac.jp/)
+ * @license  The MIT License (MIT)
+ * @version  V1.0
+ * @date  2022-10-01
+ * @url  https://github.com/DFRobot/DFRobot_SHT20
+ */
+
 #include "Arduino.h"
 
 #include "SensorHandler.h"
@@ -5,8 +17,6 @@
 #include "RainSensor.h"
 #include "DHTAmbientHumiditySensor.h"
 #include "DHTAmbientTemperatureSensor.h"
-#include "Sht20AmbientHumiditySensor.h"
-#include "Sht20AmbientTemperatureSensor.h"
 #include "MPSSoilTemperatureSensor.h"
 #include "MPSSoilHumiditySensor.h"
 #include "MPSSoilPhSensor.h"
@@ -14,6 +24,8 @@
 #include "MPSSoilNitrogenSensor.h"
 #include "MPSSoilPotassiumSensor.h"
 #include "MPSSoilPhosphorousSensor.h"
+#include "Sht20AmbientHumiditySensor.h"
+#include "Sht20AmbientTemperatureSensor.h"
 
 using namespace std;
 
@@ -21,10 +33,8 @@ SensorHandler SHandler;
 
 DistanceSensor metaDistanceSensor;
 RainSensor metaRainSensor;
-DHTAmbientHumiditySensor metaAmbientHumiditySensor;
-DHTAmbientTemperatureSensor ambientTemperatureSensor;
-Sht20AmbientHumiditySensor ambientHumiditySht20Sensor;
-Sht20AmbientTemperatureSensor ambientTemperatureSht20Sensor;
+DHTAmbientHumiditySensor metaAmbientHumidityDHTSensor;
+DHTAmbientTemperatureSensor ambientTemperatureDHTSensor;
 MPSSoilTemperatureSensor metaMPSTemperatureSensor;
 MPSSoilHumiditySensor metaMPSHumiditySensor;
 MPSSoilEcSensor metaMPSEcSensor;
@@ -32,25 +42,28 @@ MPSSoilPhSensor metaMPSPhSensor;
 MPSSoilNitrogenSensor metaMPSNitroSensor;
 MPSSoilPotassiumSensor metaMPSPotaSensor;
 MPSSoilPhosphorousSensor metaMPSPhosphoSensor;
+// Sht20AmbientHumiditySensor ambientHumiditySht20Sensor;
+// Sht20AmbientTemperatureSensor ambientTemperatureSht20Sensor;
 
 void setup() {
   Serial.begin(115200);
 }
 
 void loop() {
-  Serial.println("Distance value: " + String(metaDistanceSensor.fetchData()));
-  Serial.println("Rain value: " + String(metaRainSensor.fetchData()));
-  Serial.println("DHT Humidity value: " + String(metaAmbientHumiditySensor.fetchData()));
-  Serial.println("DHT Temperature value: " + String(ambientTemperatureSensor.fetchData()));
-  Serial.println("Sht20 Humidity value: " + String(ambientHumiditySht20Sensor.fetchData()));
-  Serial.println("Sht20 Temperature value: " + String(ambientTemperatureSht20Sensor.fetchData()));
-  Serial.println("MPS Temperature value: " + String(metaMPSTemperatureSensor.fetchData()));
-  Serial.println("MPS Humidity value: " + String(metaMPSHumiditySensor.fetchData()));
-  Serial.println("MPSPh value: " + String(metaMPSPhSensor.fetchData()));
-  Serial.println("MPSEc value: " + String(metaMPSEcSensor.fetchData()));
-  Serial.println("Nitro value: " + String(metaMPSNitroSensor.fetchData()));
-  Serial.println("MPSPhosphorous value: " + String(metaMPSPhosphoSensor.fetchData()));
-  Serial.println("MPSPotassium value: " + String(metaMPSPotaSensor.fetchData()));
+  SHandler.routine(metaDistanceSensor, "Distance");
+  SHandler.routine(metaRainSensor, "Rain");
+  SHandler.routine(metaAmbientHumidityDHTSensor, "Humidity");
+  SHandler.routine(ambientTemperatureDHTSensor, "Temperature");
+  SHandler.routine(metaMPSTemperatureSensor, "MPSTemperature");
+  SHandler.routine(metaMPSHumiditySensor, "MPSHumidity");
+  SHandler.routine(metaMPSPhSensor, "MPSPh");
+  SHandler.routine(metaMPSEcSensor, "MPSEc");
+  SHandler.routine(metaMPSNitroSensor, "MPSNitro");
+  SHandler.routine(metaMPSPhosphoSensor, "MPSPhospho");
+  SHandler.routine(metaMPSPotaSensor, "MPSPota");
+  // SHandler.routine(ambientHumiditySht20Sensor, "HumiditySht20");
+  // SHandler.routine(ambientTemperatureSht20Sensor, "TemperatureSht20");
   
+  Serial.print("*"); // Just for feedback
   delay(500);
 }

@@ -8,7 +8,7 @@ DHT dhtHumid(DHTPIN, DHTTYPE);
 class DHTAmbientHumiditySensor: public AbstractSensor {  
     public: 
         DHTAmbientHumiditySensor(
-            word sensorSleepCount=1000, 
+            word sensorSleepCount=100, 
             byte sensorReadCount=10, 
             byte sensorMValue=10, 
             byte sensorCValue=0, 

@@ -3,7 +3,7 @@
 class RainSensor: public AbstractSensor {  
     public: 
         RainSensor(
-            word sensorSleepCount=10000, 
+            word sensorSleepCount=100, 
             byte sensorReadCount=10, 
             byte sensorMValue=1, 
             byte sensorCValue=0, 

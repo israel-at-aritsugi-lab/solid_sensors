@@ -7,7 +7,7 @@ DFRobot_SHT20 sht20Temp;
 class Sht20AmbientTemperatureSensor: public AbstractSensor {  
     public: 
         Sht20AmbientTemperatureSensor(
-            word sensorSleepCount=1000, 
+            word sensorSleepCount=100, 
             byte sensorReadCount=10, 
             byte sensorMValue=10, 
             byte sensorCValue=200, 

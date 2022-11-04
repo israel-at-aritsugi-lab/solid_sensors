@@ -8,7 +8,7 @@ DHT dhtTemp(DHTPIN, DHTTYPE);
 class DHTAmbientTemperatureSensor: public AbstractSensor {  
     public: 
         DHTAmbientTemperatureSensor(
-            word sensorSleepCount=1000, 
+            word sensorSleepCount=100, 
             byte sensorReadCount=10, 
             byte sensorMValue=10, 
             byte sensorCValue=200, 
