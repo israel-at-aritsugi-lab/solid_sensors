@@ -9,7 +9,7 @@ Features
 =============
 The library can be used in two main ways:
 - [Skeletal form](./examples/example1-simple.cpp); use in the simplest form
-- [Complete form](https://github.com/israel-at-aritsugi-lab/solid_sensors/blob/main/examples/example2-with-handler.cpp); use with SensorHandler class
+- [Complete form](./examples/example2-with-handler.cpp); use with SensorHandler class
 
 Getting started
 =============
