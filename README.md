@@ -8,7 +8,7 @@ The library is implemented for specific sensors, with a template class file prov
 Features
 =============
 The library can be used in two main ways:
-- Skeletal form; use in the simplest form
+- [Skeletal form](examples/example1-simple); use in the simplest form
 - Complete form; use with SensorHandler class
 
 Getting started
@@ -24,8 +24,6 @@ Getting started
     git clone [https://github.com/israel-at-aritsugi-lab/iot-mcf](https://github.com/israel-at-aritsugi-lab/solid_sensors)
 
     ```
-
-
 
 Contribution
 =============
