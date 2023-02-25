@@ -13,10 +13,6 @@ The library can be used in two main ways:
 
 Getting started
 =============
-### Prerequisites
-- Python 3.6+
-- pip
-
 ### Installation
 
 1. Clone the repository:
