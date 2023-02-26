@@ -18,7 +18,6 @@ Getting started
 1. Clone the repository:
     ``` 
     git clone https://github.com/israel-at-aritsugi-lab/solid_sensors
-
     ```
 
 Contribution
