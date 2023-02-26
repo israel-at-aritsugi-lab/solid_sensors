@@ -1,6 +1,6 @@
 # SOLID Sensors
 
-**Description**:  IoT sensors library for effective project development. The library implementation observes the Object Oriented Programming paradigm's SOLID Principles for enhanced design-time qualities (including Reusability, Extensibility, Simplicity and Maintainability (RESM)), without necessarily undermining run-time qualities (including time and space complexity). The library makes it easy to use sensors in IoT projects in a modular style, such that high quality code is achieved with minimum effort.
+IoT sensors library for effective project development. The library implementation observes the Object Oriented Programming paradigm's SOLID Principles for enhanced design-time qualities (including Reusability, Extensibility, Simplicity and Maintainability (RESM)), without necessarily undermining run-time qualities (including time and space complexity). The library makes it easy to use sensors in IoT projects in a modular style, such that high quality code is achieved with minimum effort.
 
 The library is implemented for specific sensors, with a template class file provided for sensors yet to be included.
 
